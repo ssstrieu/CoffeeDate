@@ -12,8 +12,8 @@ def get_distance(location1,location2):
     print 'distance', result
     return result
     
-get_d= get_distance('ontario','40.7127837, -74.0059413')
-print 'get_d', get_d
+# get_d= get_distance('ontario','40.7127837, -74.0059413')
+# print 'get_d', get_d
 
 
 def get_longlat(place):

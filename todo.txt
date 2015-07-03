@@ -1,0 +1,5 @@
+1. create error message for multiple ciies named same thing
+2. export restaruants function
+3. "more restaurants" option. if you dont like your first 10 options, can resuffle and get more
+
+oauth ofr yelp api

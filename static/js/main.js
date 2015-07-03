@@ -1,7 +1,7 @@
 /*message='Are you sure you want to delete?';
 result = window.confirm(message);
 */
-
+alert('JS file found');
 $( document ).ready(function(){
     function initialize() {
         /* after you calculate the locations, plug into this js fxn*/
