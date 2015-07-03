@@ -1,6 +1,7 @@
 import requests, string
 from flask import Flask, jsonify, render_template, request
 # from model import * 
+# from YELP import *
 
 app = Flask(__name__)
 
@@ -56,13 +57,41 @@ def get_distance(longlat1,longlat2):
 def find_midpoint(longlat1,longlat2):
     #divide distance by 2 and get longlat of that location
     #input is string, convert to array of integers for math, then back to string 
-    midx=(longlat1[0]+longlat2[0])/2
-    midy=(longlat1[1]+longlat2[1])/2
+    print 'string to array========', longlat1.split(',')
+    longlat1_list=longlat1.split(',')
+    longlat2_list=longlat2.split(',')
+    midx=(float(longlat1_list[0])+float(longlat2_list[0]))/2
+    midy=(float(longlat1_list[1])+float(longlat2_list[1]))/2
     midxy=str(midx)+', '+str(midy)
-    print 'MIDPOINT=========',midxy
+    print 'MIDPOINT========= as string: ',midxy
     return midxy
 
-find_midpoint([0,0], [-200,-2])    
+# find_midpoint('0,0', '-200,-200')    
+
+# def yelp_call(foodtype,midxy):
+#     foodtype= 'dessert'
+#     LL='37.7919615,-122.2287941' #oakland ;replate with midxy later
+#     query_yelp()
+#     #oauth
+#     #pull 
+#     url='https://maps.googleapis.com/maps/api/distancematrix/json?'
+#     url+='origins={}&destinations={}'.format(longlat1,longlat2)
+#     # print '====== GET DISTANCE URL ', url
+#     request=requests.get(url)
+#     result=request.json()['rows'][0]['elements'][0]['distance']['text']
+#     # print request.json()['rows'][0]['elements'][0]
+#     print '=======Distance btwn longlat1 &2', result
+#     return result
+
+
+
+
+
+
+
+
+
+# Routes=======================
 
 @app.route('/')
 def index():
@@ -72,15 +101,19 @@ def index():
 def find():
     loc1=request.form.get('location1')
     loc2=request.form.get('location2')
+    foodtype=request.form.get('foodtype')
     print '=====loc 1',loc1,get_longlat(loc1)
     print '=====loc 2',loc2,get_longlat(loc2)
-    # print '====='
+    print '=====FOODTYPE', foodtype
     longlat1=get_longlat(loc1)
     longlat2=get_longlat(loc2)
     # print '=====TURN TO STRING!======',longlat1
     # print '=====TURN TO STRING!======',longlat2
     # still need to control for error involving multiple cities named hte same thing...
     get_distance(longlat1,longlat2)
+    midxy=find_midpoint(longlat1,longlat2)
+    
+    # yelp_call(foodtype,midxy)
     return render_template('index.html')
 
     
