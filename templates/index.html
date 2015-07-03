@@ -2,54 +2,76 @@
 
     <title>Meet Me Halfway</title>
 
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel='stylesheet' type='text/css' href='../static/styles.css'>
-    <link rel='stylesheet' type='text/css' href='../static/style2.css'>
-    <link rel="icon" type="image/png" href="../static/img/coffee1.ico">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+    <link href="../static/css/style2.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="img/coffee1.ico">
+
+    <!-- github ribbon -->
+	<a href="https://github.com/ssstrieu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 </head>
 
 <body>
 	<div class='jumbotron city'>
-		<h1><span class='glyphicon glyphicon-glass'></span>Meet Me Halfway </h1>
-		<h3>Find a great food location that works for you and your date!  </h3>
-	
-
 		<div class="container">
-	    <div class="input-group">
+		<h1><small><span class='glyphicon glyphicon-glass spacerR'></span></small>Meet Me Halfway </h1>
+		<h3>Find a great food place that works for you and your date!  </h3>
+	
+<!-- location form -->
+		
+	    <form action='/find' method='POST' class="input-group">
 	      <div class='row'>
 	      	<div class='col-md-6'>
-	      		<input type="text" class="form-control" placeholder="Your Location (Zip or City)">
+	      		<input type="text" class='form-control' name="location1" placeholder="Your Location">
 	      	</div>
 	      	<div class='col-md-6'>
-	      		<input type="text" class="form-control" placeholder="Their Location (Zip or City)">
+	      		<input type="text" class='form-control' name="location2" placeholder="Their Location">
 	      	</div>
 	      </div>
-	      
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button">Go!</button>
-	      </span>
-	    </div><!-- /input-group -->
-	  </div><!-- /container -->
 
-	</div>
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="submit">Go!</button>
+	      </span>
+	    </form><!-- /input-group -->
+	  </div><!-- /container -->
+	</div><!-- /jumbotron -->
+
+
+	<!-- <form action="/music" method="POST">
+        <input type="text" name="location1" placeholder="Your Location">
+        <input type="text" name="location2" placeholder="Their Location">
+        <input class="button-primary" type="submit" value="Go!">
+	</form> -->
+
+
+
 
 	<!--map container- hidden with .hide class until location submitted -->
-	<div class='container hide'>
+	<div class='container'>
 		<div class='row'>
-			<div class='col-md-4 sidebar'>sidebar</div>
-			<div class='col-md-8 map' id='googleMap'>map</div>
+			<div class='col-md-4 list-group sidebar'>
+				<h3 id='bttn'>Recommendations</h3>
+				<ul>
+					<li class='sidebar-item list-group-item'>place1</li>
+					<li class='sidebar-item list-group-item'>place1</li><li class='sidebar-item list-group-item'>place1</li><li class='sidebar-item list-group-item'>place1</li>
+				</ul>
+			</div>
+			<div class='col-md-8 map' id='googleMap'>
+				<iframe width="100%" height="400px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=13&center=37.7785%2C-122.4056&key=AIzaSyAPyQ4vH8xfcrDI5lQ1DiTkaMvL-LP8_KU"></iframe>
+			</div>
 		</div>
 	</div>
-	
 
+<!--code for directions
+ 	<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=San%20Francisco%20Airport%2C%20San%20Francisco%2C%20CA%2C%20United%20States&destination=Blue%20Bottle%20Coffee%2C%20Mint%20Plaza%2C%20San%20Francisco%2C%20CA%2C%20United%20States&key=AIzaSyAPyQ4vH8xfcrDI5lQ1DiTkaMvL-LP8_KU"></iframe> -->
+	
+    <script src="../static/js/jquery-1.11.3.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- WHY WONT MAIN.JS LINK... -->
+    <script src="main.js"></script>
 
 	
-	<script src="../static/jquery-1.11.3.min"></script>
-	<script type="text/javascript" src='../static/js/bootstrap.min.js'></script>
-	<script type="text/javascript" src='../static/main.js'></script>
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 
 </body>
-
-
-

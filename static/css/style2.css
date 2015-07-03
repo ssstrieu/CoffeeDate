@@ -1,0 +1,41 @@
+.jumbotron.city{
+	background: url('../img/city2.jpg');
+	background-size: 100%
+	background-repeat: no-repeat;
+
+}
+
+.jumbotron{
+	padding: 10%;
+
+}
+
+.spacerR{
+	margin: 0 6px 0 0;
+}
+
+.sidebar{
+	/*border: 4px solid red;
+	padding: 1%;*/
+	overflow: auto;
+}
+
+.sidebar-item{
+
+}
+
+.map{
+	/*border: 4px solid red;
+	padding: 1%;*/
+
+}
+
+.hide{
+	visibility: hidden;
+}
+
+footer{
+	padding:10px;
+	text-align: right;
+
+}
