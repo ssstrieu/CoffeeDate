@@ -20,16 +20,12 @@ SORT= 2 # sort entries by highest rating
 OFFSET=10 # used to get 10 more entries
 
 # OAuth credential placeholders that must be filled in by users
-
-
 CONSUMER_KEY='KnkNJZOb3bXivxWtsG7Eow'
 CONSUMER_SECRET='z7lfCVyF6ZaU3_dr8LWMlflfuh0'
 TOKEN='fwNYpd3zdX_njQ6Ja_DhXnImPMxt5_wM'
 TOKEN_SECRET='IsKZxAUeTfSP07dWT5QaAPkKG4Q'
 
-
-
-def request(host, path, url_params=None):
+def request_to_url(host, path, url_params=None):
     """Prepares OAuth authentication and sends the request to the API.
     Args:
         host (str): The domain host of the API.
@@ -90,7 +86,7 @@ def search(term, location):
 
     }
     
-    r=request(API_HOST, SEARCH_PATH, url_params=url_params)
+    r=request_to_url(API_HOST, SEARCH_PATH, url_params=url_params)
     return r
 
 # def get_business(business_id):
@@ -101,7 +97,7 @@ def search(term, location):
 #         dict: The JSON response from the request.
 #     """
 #     business_path = BUSINESS_PATH + business_id
-#     b=request(API_HOST, business_path)
+#     b=request_to_url(API_HOST, business_path)
 #     print '=========BUSINESS RESPONSE======='
 #     return b
 
@@ -113,7 +109,7 @@ def query_api(term, location):
     """
     response = search(term, location)
 
-    # businesses = response.get('businesses')
+    businesses = response.get('businesses')
 
     # if not businesses:
     #     print u'No businesses for {0} in {1} found.'.format(term, location)
@@ -129,12 +125,10 @@ def query_api(term, location):
     # response = get_business(business_id)
 
     # print u'Result for business "{0}" found:'.format(business_id)
-    #########  pprint displates results of query in terminal
-    print '========QUERY RESPONSE OBJECT===========', response
+    # ########  pprint displates results of query in terminal
+    # print '========QUERY RESPONSE OBJECT===========', response
     return response
     
-
-
 # def main():
 #     parser = argparse.ArgumentParser()
 
@@ -155,6 +149,5 @@ def query_api(term, location):
 #     #just renaming to be more clear
 #     query_api(foodtype, LL)
 
-if __name__ == '__main__':
-    # main()
-    query_api('bar', '37.7615898, -122.2452818')
+#####test query
+# query_api('bar', '37.7615898, -122.2452818')

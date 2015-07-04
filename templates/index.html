@@ -15,8 +15,8 @@
 <body>
 	<div class='jumbotron city'>
 		<div class="container">
-		<h1><small><span class='glyphicon glyphicon-glass spacerR'></span></small>Meet Me Halfway </h1>
-		<h3>Find a great food place that works for you and your date!  </h3>
+		<h1 class='textStroke'><small><span class='glyphicon glyphicon-glass spacerR'></span></small>Meet Me Halfway </h1>
+		<h3 class='textStroke'>Find a great food place that works for you and your date!  </h3>
 	
 <!-- location form input-group-->
 		
@@ -64,10 +64,46 @@
 	<div class='container'>
 		<div class='row'>
 			<div class='col-md-4 list-group sidebar'>
-				<h3 id='bttn'>Recommendations <span class='btn btn-info btn-sm' style='margin:0 0 0 6px'>More!</span></h3>
+				<div class='sidebar-head'>
+					<h3>Recommendations <!-- <span class='btn btn-info btn-sm' style='margin:0 0 0 6px'>More!</span> --> 
+						<img class ='yelpbtn' src='../static/img/yelp.png'></img>
+					</h3>
+				</div>
+
 				<ul>
-					<li class='sidebar-item list-group-item'>place1</li>
-					<li class='sidebar-item list-group-item'>place1</li><li class='sidebar-item list-group-item'>place1</li><li class='sidebar-item list-group-item'>place1</li>
+
+					<!-- {% for b in businesses %}
+						<li class='sidebar-item list-group-item'>
+							<a href={{ biz.mobile_url}}><span class='bizName'>{{ biz.name }}</span></a>
+							<span class='bizName'>{{ biz.categories }}</span>
+							<span class='bizName'><img src={{ biz.stars }}></img>></span>
+							<span class='bizAddress'><img src={{ biz.address }}></img>></span>
+						
+
+						</li>
+
+					{% endfor %} -->
+
+
+
+
+					<li class='sidebar-item list-group-item'>
+						<a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
+							<span class='bizName'>Crossroads Cafe</span>
+
+							<span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
+						</a>
+
+						<!-- <span class='bizStars'>
+							<img src='http://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png'></img>
+						</span> -->
+
+						<div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
+						<div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
+						
+						
+					</li>
+					
 				</ul>
 			</div>
 			<div class='col-md-8 map' id='googleMap'>
