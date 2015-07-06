@@ -24,6 +24,8 @@ def find():
     longlat2=get_longlat(loc2)
     midxy=find_midpoint(longlat1,longlat2)
 
+    offset=request.args.get('offset')
+    print '======offset====', offset
     biz=query_api(foodtype, midxy)['businesses']
     list_of_dict=[]
     for b in biz:

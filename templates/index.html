@@ -8,10 +8,7 @@
 
     <link rel="icon" type="image/png" href="../static/img/coffee1.ico">
 
-	
-
-
-			<nav class="navbar navbar-default" style='margin:0;'>
+<!-- 			<nav class="navbar navbar-default" style='margin:0;'>
                 <div class="container-fluid">
                   <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -30,7 +27,7 @@
                     </ul>
                   </div>
                 </div>
-              </nav>	
+              </nav> -->	
 
 
 </head>
@@ -54,7 +51,7 @@
 	      	<div class='col-md-4'>
 	      		<input type="text" class='form-control' name="location2" placeholder="Their Location">
 	      	</div>
-	      	 <div class='col-md-3'>
+	      	<div class='col-md-3'>
 		        <select class='form-control' id='select' name='foodtype'>
 		        	<option value='breakfast_brunch'>Breakfast/Brunch</option>
 		        	<option value='restaurants'>Lunch/Dinner</option>
@@ -64,27 +61,14 @@
 		        </select>
 
 		    </div>
-	      	 <div class='col-md-1'>
+	      	<div class='col-md-1'>
 		        <button class="btn btn-primary" type="submit"><strong>GO!</strong></button>
 		    </div>
 	      </div>
 
-	      <!-- <span class="input-group-btn"> -->
-
-	      <!-- </span> -->
 	    </form><!-- /input-group -->
 	  </div><!-- /container -->
 	</div><!-- /jumbotron -->
-
-
-	<!-- <form action="/music" method="POST">
-        <input type="text" name="location1" placeholder="Your Location">
-        <input type="text" name="location2" placeholder="Their Location">
-        <input class="button-primary" type="submit" value="Go!">
-	</form> -->
-
-
-
 
 	<!--map container- hidden with .hide class until location submitted -->
 	<div class='container'>
@@ -93,9 +77,8 @@
 				<div class='sidebar-head'>
 					<h3>Places<!-- <span class='btn btn-info btn-sm' style='margin:0 0 0 6px'>More!</span> --> 
 						<img class ='yelpbtn' src='../static/img/yelp.png'></img>
-						<!-- <form action='/find' method='GET' class="">
-							<button class="spacerL btn btn-info btn-sm" type='submit'>More!</button>
-						</form> -->
+						<button class="spacerL btn btn-info btn-sm" action='/find?offset=5' method='POST' type='submit'>Find More!</button>
+						
 					</h3>
 				</div>
 
@@ -111,8 +94,6 @@
 						</li>
 
 					{% endfor %}
-
-
 
 
 					<!-- <li class='sidebar-item list-group-item'>
@@ -138,25 +119,7 @@
 						</a>
 						<div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
 						<div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
-					</li>
-					<li class='sidebar-item list-group-item'>
-						<a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
-							<span class='bizName'>Crossroads Cafe</span>
-							<span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
-						</a>
-						<div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
-						<div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
-					</li>
-					<li class='sidebar-item list-group-item'>
-						<a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
-							<span class='bizName'>Crossroads Cafe</span>
-							<span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
-						</a>
-						<div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
-						<div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
 					</li>-->
-
-					
 				</ul> 
 
 			</div>
@@ -166,14 +129,10 @@
 		</div>
 	</div>
 
-<!--code for directions
- 	<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=San%20Francisco%20Airport%2C%20San%20Francisco%2C%20CA%2C%20United%20States&destination=Blue%20Bottle%20Coffee%2C%20Mint%20Plaza%2C%20San%20Francisco%2C%20CA%2C%20United%20States&key=AIzaSyAPyQ4vH8xfcrDI5lQ1DiTkaMvL-LP8_KU"></iframe> -->
 	
     <script src="../static/js/jquery-1.11.3.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="../static/js/main.js"></script>
-
-	
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 
 </body>
