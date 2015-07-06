@@ -18,3 +18,5 @@ category
 link to yelp page
 coordinates
 id to link to map...
+
+link to GPS on phone

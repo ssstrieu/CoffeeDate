@@ -11,7 +11,7 @@ def get_longlat(place):
     result=request.json()['results'][0]['geometry']['location'].values()
     # print result
     r =str(result[0])+', '+str(result[1])
-    print place,':  return longlat "R" as a STRING====', r 
+    # print place,':  return longlat "R" as a STRING====', r 
     return r
 
 def get_distance(longlat1,longlat2):
@@ -21,7 +21,7 @@ def get_distance(longlat1,longlat2):
     request=requests.get(url)
     result=request.json()['rows'][0]['elements'][0]['distance']['text']
     # print request.json()['rows'][0]['elements'][0]
-    print '=======Distance btwn longlat1 & 2 ====', result
+    # print '=======Distance btwn longlat1 & 2 ====', result
     return result
 
 def find_midpoint(longlat1,longlat2):
@@ -33,7 +33,7 @@ def find_midpoint(longlat1,longlat2):
     midx=(float(longlat1_list[0])+float(longlat2_list[0]))/2
     midy=(float(longlat1_list[1])+float(longlat2_list[1]))/2
     midxy=str(midx)+', '+str(midy)
-    print 'MIDPOINT========= as string: ',midxy
+    # print 'MIDPOINT========= as string: ',midxy
     return midxy
 
 # # test calling    
@@ -44,4 +44,4 @@ def find_midpoint(longlat1,longlat2):
 # print 'midxy', midxy
 
 
-get_longlat('14441 tiburon rd, san leandro, ca 94577')
+# get_longlat('14441 tiburon rd, san leandro, ca 94577')

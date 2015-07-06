@@ -16,6 +16,9 @@ h1.textStroke{
 h3.textStroke{
 	text-shadow: 1px 1px 1px #2b3e50;
 }
+h3{
+	margin: 0 0 10px 0;
+}
 
 .spacerR{
 	margin-right:6px;
@@ -27,6 +30,7 @@ h3.textStroke{
 .sidebar{
 	/*border: 4px solid red;
 	padding: 1%;*/
+	max-height: 550px;
 	overflow: auto;
 }
 
@@ -36,11 +40,14 @@ h3.textStroke{
 }
 
 .sidebar-item .bizCategory{
-	color: #2B3E50;
+	color: #fff; 
+	font-style: bold;
+	/*#2B3E50*/
 
 }
 .sidebar-item .bizAddress{
 	font-size: 80%;
+	font-style: italic;
 }
 
 .map{

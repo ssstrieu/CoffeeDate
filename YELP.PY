@@ -10,7 +10,7 @@ import oauth2
 API_HOST = 'api.yelp.com'
 DEFAULT_TERM = 'RESTAURANT'
 DEFAULT_LOCATION = 'San Fransisco'
-SEARCH_LIMIT = 3
+SEARCH_LIMIT = 5
 SEARCH_PATH = '/v2/search/'
 BUSINESS_PATH = '/v2/business/'
 
@@ -151,3 +151,20 @@ def query_api(term, location):
 
 #####test query
 # query_api('bar', '37.7615898, -122.2452818')
+
+class Business_info(object):
+    def __init__(self, Obj):
+        self.name = Obj['name']
+        self.mobile_url = Obj['mobile_url']
+        self.stars = Obj['rating']
+        categories=Obj['categories'] #format category from array in an array to string
+        categories_list=[]
+        for c in categories:
+          categories_list.append(''.join(c[0]))
+        categories_string=', '.join(categories_list)
+        self.category = categories_string
+        addr=Obj['location']['display_address'] # format address from list to string
+        str1 = ', '.join(str(e) for e in addr)
+        # addr=str(Obj['location']['display_address'][0]) +', '+ str(Obj['location']['display_address'][2])
+        self.address = str1
+        self.longlat= str(Obj['location']['coordinate']['longitude'])+', '+str(Obj['location']['coordinate']['latitude'])
