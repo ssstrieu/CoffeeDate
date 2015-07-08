@@ -14,10 +14,10 @@ SEARCH_LIMIT = 5
 SEARCH_PATH = '/v2/search/'
 BUSINESS_PATH = '/v2/business/'
 
-#search URL parms
+#optional search URL parms
 RADIUS_FILTER = 8000 #5mi
 SORT= 2 # sort entries by highest rating
-OFFSET=10 # used to get 10 more entries
+OFFSET=0 # used to get 10 more entries
 
 # OAuth credential placeholders that must be filled in by users
 CONSUMER_KEY='KnkNJZOb3bXivxWtsG7Eow'
@@ -65,7 +65,7 @@ def request_to_url(host, path, url_params=None):
     # print '=========this is the request response=== ', response
     return response
 
-def search(term, location):
+def search(term, location, RADIUS_FILTER, OFFSET):
     """Query the Search API by a search term and location.
     Args:
         term (str): The search term passed to the API.
@@ -87,6 +87,7 @@ def search(term, location):
     }
     
     r=request_to_url(API_HOST, SEARCH_PATH, url_params=url_params)
+    print 'request ressults get!=========='
     return r
 
 # def get_business(business_id):
@@ -101,20 +102,21 @@ def search(term, location):
 #     print '=========BUSINESS RESPONSE======='
 #     return b
 
-def query_api(term, location):
+def query_api(term, location, RADIUS_FILTER, OFFSET):
     """Queries the API by the input values from the user.
     Args:
         term (str): The search term to query.
         location (str): The location of the business to query.
     """
-    response = search(term, location)
+    response = search(term, location, RADIUS_FILTER, OFFSET)
 
     businesses = response.get('businesses')
 
-    # if not businesses:
-    #     print u'No businesses for {0} in {1} found.'.format(term, location)
-    #     return
-
+    if not businesses:
+        message = 'No businesses for "{0}" in "{1}" found.'.format(term, location)
+        print message
+        return 
+    print 'number of results: ======== ', len(businesses)
     # business_id = businesses[0]['id']
 
     # print u'{0} businesses found, querying business info for the top result "{1}" ...'.format(
@@ -145,12 +147,6 @@ def query_api(term, location):
 #     except urllib2.HTTPError as error:
 #         sys.exit('Encountered HTTP error {0}. Abort program.'.format(error.code))
 
-# def query_yelp(foodtype, LL):
-#     #just renaming to be more clear
-#     query_api(foodtype, LL)
-
-#####test query
-# query_api('bar', '37.7615898, -122.2452818')
 
 class Business_info(object):
     def __init__(self, Obj):
@@ -168,3 +164,5 @@ class Business_info(object):
         # addr=str(Obj['location']['display_address'][0]) +', '+ str(Obj['location']['display_address'][2])
         self.address = str1
         self.longlat= str(Obj['location']['coordinate']['longitude'])+', '+str(Obj['location']['coordinate']['latitude'])
+        self.latlong=str(Obj['location']['coordinate']['latitude'])+', '+str(Obj['location']['coordinate']['longitude'])
+       

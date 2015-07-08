@@ -18,14 +18,6 @@ $( document ).ready(function(){
 
   var result=google.maps.event.addDomListener(window, 'load', initialize);
 
-  // $('#bttn').on('click',result)
-
-
-
-
-
-
-
 
  }) //document-ready close
 

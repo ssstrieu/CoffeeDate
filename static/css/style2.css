@@ -30,8 +30,20 @@ h3{
 .sidebar{
 	/*border: 4px solid red;
 	padding: 1%;*/
-	max-height: 550px;
+
+}
+
+/*#map-canvas {
+        width: 100%;
+        height: 500px;
+        margin: 0px;
+        padding: 0px
+      }*/
+
+.item-container{
+	max-height: 500px;
 	overflow: auto;
+
 }
 
 .sidebar-item .bizName{
@@ -45,16 +57,16 @@ h3{
 	/*#2B3E50*/
 
 }
-.sidebar-item .bizAddress{
+.bizAddress{
 	font-size: 80%;
 	font-style: italic;
+	color:#000;
 }
 
-.map{
-	/*border: 4px solid red;
-	padding: 1%;*/
-
+.bizAddress a{
+	color:#000;
 }
+
 
 .sidebar-head{
 /*	position: absolute;*/
