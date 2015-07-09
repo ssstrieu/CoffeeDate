@@ -72,7 +72,7 @@
 
             </div>
             <div class='col-md-1'>
-                <a href='#placeResults'><button class="showBtn btn btn-primary" type="submit"><strong>GO!</strong></button></a>
+                <a href='#placeResults'><button class="showBtn btn btn-primary roundCorners" type="submit"><strong>GO!</strong></button></a>
             </div>
           </div>
 
@@ -87,17 +87,17 @@
         <div class='row'>
             <div class='col-md-4 list-group sidebar'>
                 <div class='sidebar-head'>
-                    <h3 class='spacerL'>Places
+                    <h3>Places
                         <img class ='yelpbtn' src='../static/img/yelp.png'></img>
                         
-                        <form action='/more?offset=5' method='POST' style='display:inline; margin:0;'>
-                            <button class="hide spacerL btn btn-info btn-sm" type="submit"><strong>Find More!</strong></button>
+                        <form action='/more' method='POST' style='display:inline; margin:0;'>
+                            <button class="roundCorners spacerL btn btn-info btn-sm" type="submit"><strong>Find More!</strong></button>
                         </form>
                         
                     </h3>
                 </div>
                 <div class='item-container'>
-                    <ul>
+                    <ol>
                         {% for b in list_of_obj %}
                             <li class='sidebar-item list-group-item'>
                                 <a href={{ b.mobile_url }}>
@@ -114,32 +114,7 @@
 
                         {% endfor %}
 
-
-                        <!-- <li class='sidebar-item list-group-item'>
-                            <a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
-                                <span class='bizName'>Crossroads Cafe</span>
-                                <span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
-                            </a>
-                            <div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
-                            <div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
-                        </li>
-                        <li class='sidebar-item list-group-item'>
-                            <a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
-                                <span class='bizName'>Crossroads Cafe</span>
-                                <span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
-                            </a>
-                            <div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
-                            <div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
-                        </li>
-                        <li class='sidebar-item list-group-item'>
-                            <a href='http://m.yelp.com/biz/crossroads-cafe-san-francisco-7'>
-                                <span class='bizName'>Crossroads Cafe</span>
-                                <span class='spacerR spacerL glyphicon glyphicon-new-window'></span>
-                            </a>
-                            <div class='bizCategory'>Coffee & Tea, Sandwiches, Bagels</div>
-                            <div class='bizAddress'>699 Delancey St, SoMa, San Francisco, CA 94107</div>
-                        </li>-->
-                    </ul> 
+                    </ol> 
                 </div>
             </div>
             <div class='col-md-8' id='map-canvas' style=' min-height:450px;'></div>
@@ -150,6 +125,7 @@
     <script src="../static/js/jquery-1.11.3.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <!-- <script src="../static/js/epoly.js" type="text/javascript"> </script> -->
 
 
 
@@ -162,7 +138,7 @@
 
                   var myLatlng = new google.maps.LatLng( {{ midxy }} );
                   var mapOptions = {
-                    zoom: 12,
+                    zoom: 10,
                     center: myLatlng
                   };
                   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -183,3 +159,6 @@
     </script>
 
 </body>
+<footer>
+    <a href='http://www.github.com/ssstrieu'>Made by Samantha Trieu for Hackbright Part-time Class: Fullstack Final Project 2015</a>
+</footer>

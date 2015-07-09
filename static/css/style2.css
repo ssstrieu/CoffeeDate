@@ -17,7 +17,7 @@ h3.textStroke{
 	text-shadow: 1px 1px 1px #2b3e50;
 }
 h3{
-	margin: 0 0 10px 0;
+	padding-left: 40px;
 }
 
 .spacerR{
@@ -33,15 +33,13 @@ h3{
 
 }
 
-/*#map-canvas {
-        width: 100%;
-        height: 500px;
-        margin: 0px;
-        padding: 0px
-      }*/
+.sidebar-head{
+	margin: 0 0 10px 0;
+
+}
 
 .item-container{
-	max-height: 500px;
+	max-height: 408px;
 	overflow: auto;
 
 }
@@ -60,19 +58,22 @@ h3{
 .bizAddress{
 	font-size: 80%;
 	font-style: italic;
-	color:#000;
+	color:#DF691A;
 }
 
 .bizAddress a{
-	color:#000;
+	color:#DF691A;
 }
 
-
-.sidebar-head{
-/*	position: absolute;*/
-
+.corners{
+	border-radius: 0px;
 
 }
+.roundCorners{
+	border-radius: 8px;
+
+}
+
 .yelpbtn{
 /*	position:relative;
 	right:100%;*/

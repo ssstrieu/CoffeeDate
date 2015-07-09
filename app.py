@@ -20,15 +20,14 @@ def find():
     loc1=session['loc1']
     loc2=session['loc2']
     foodtype=session['foodtype']
+    session['offset']=0
+    offset=session['offset']
 
     longlat1=get_longlat(loc1)
     longlat2=get_longlat(loc2)
     midxy=find_midpoint(longlat1,longlat2)
     session['midxy']=midxy
     print '======session xy====', session['midxy']
-
-    offset=request.args.get('offset')
-    print '======offset====', offset
 
     try:
         radius =8000
@@ -52,35 +51,56 @@ def find():
     except:
         print 'broke :('
         error=True
-        errormsg='Your search returned no results. Please try different inputs.'
+        errormsg='Your search returned no results. Please try a different search.'
         return render_template('index.html',errormsg=errormsg, error=error)
 
     return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1,loc2=loc2, midxy=midxy,started_search=started_search)
 
-# @app.route('/more', methods=['POST'])
-# def find_more():
-#     # print session.get['loc1']
-#     offset=request.args.get('offset')
-#     print '======find more session====', session['loc1']
-#     print '======find more session====', session['loc2']
-#     print '======find more session====', session['foodtype']
-#     print '======find more session====', session['midxy']
-#     print '======find more session====', offset
-#     loc1=session['loc1']
-#     foodtype=session['foodtype']
-#     midxy=session['midxy']
-#     biz=query_api(foodtype, midxy)['businesses']
-#     list_of_dict=[]
-#     for b in biz:
-#         list_of_dict.append(b)
-#     print '============= list of dict', len(list_of_dict)
+@app.route('/more', methods=['POST'])
+def find_more():
+
+    started_search=True
+    print '======find more session====', session['loc1']
+    print '======find more session====', session['loc2']
+    print '======find more session====', session['foodtype']
+    print '======find more session====', session['midxy']
+   
     
-#     list_of_obj=[]
-#     for d in list_of_dict:
-#         b=Business_info(d)
-#         list_of_obj.append(b)    
-#     print '============= list of dict', len(list_of_obj)
-#     return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1 )
+    loc1=session['loc1']
+    loc2=session['loc2']
+    foodtype=session['foodtype']
+    midxy=session['midxy']
+    session['offset']+= 7
+    offset=session['offset']
+    print 'offset now is: =====', offset
+
+
+    try:
+        radius =8000
+        biz=query_api(foodtype, midxy, radius, offset)['businesses']
+        list_of_dict=[]
+        for b in biz:
+            list_of_dict.append(b)
+        print '============= list of dict', len(list_of_dict)
+        
+        list_of_obj=[]
+        for d in list_of_dict:
+            b=Business_info(d)
+            list_of_obj.append(b)
+        print '============= list of obj', len(list_of_obj)
+    except:
+        print 'broke :('
+        error=True
+        errormsg='No more results. Please try a different search.'
+        return render_template('index.html',errormsg=errormsg, error=error)
+
+    return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1,loc2=loc2, midxy=midxy,started_search=started_search)
+
+
+
+
+
+    return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1 )
 
 
 
