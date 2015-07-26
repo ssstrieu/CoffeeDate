@@ -53,7 +53,7 @@
     
 <!-- location form input-group-->
         
-        <form action='/find' method='POST' class="">
+        <form action='/find#bottom' method='POST' class="">
           <div class='row'>
             <div class='col-md-4'>
                 <input type="text" class='form-control' name="location1" placeholder="Your Location(street, city or zip)">
@@ -90,7 +90,7 @@
                     <h3>Places
                         <img class ='yelpbtn' src='../static/img/yelp.png'></img>
                         
-                        <form action='/more' method='POST' style='display:inline; margin:0;'>
+                        <form action='/more#bottom' method='POST' style='display:inline; margin:0;'>
                             <button class="roundCorners spacerL btn btn-info btn-sm" type="submit"><strong>Find More!</strong></button>
                         </form>
                         
@@ -107,7 +107,7 @@
                             <div class='bizCategory'>{{ b.category }}</div>
 
                             <div class='bizAddress'>{{ b.address }} 
-                                <a href='https://www.google.com/maps/dir/{{ loc1 }}/{{ b.address }} '><div> [Directions]</div></a>
+                                <a href='https://www.google.com/maps/dir/{{ loc1 }}/{{ b.address }} '><div class='directions'> [Directions]</div></a>
                             </div>
                                 
                             </li>
@@ -157,8 +157,12 @@
 
          }) //document-ready close
     </script>
+    <a name='bottom'></a>
+
 
 </body>
+
 <footer>
-    <a href='http://www.github.com/ssstrieu'>Made by Samantha Trieu for Hackbright Part-time Class: Fullstack Final Project 2015</a>
+    <span class='left'><a href='#toTop'>Back to Top</a></span>
+    <span class='right'><a href='http://www.github.com/ssstrieu'>By Samantha Trieu 2015</a></span>
 </footer>

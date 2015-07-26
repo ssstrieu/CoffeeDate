@@ -44,6 +44,15 @@ h3{
 
 }
 
+.active.sidebar-item{
+	background-color: #DF691A;
+
+}
+.active .bizName, .active .bizCategory, .active .bizAddress, .active .directions{
+	color:#000;
+
+}
+
 .sidebar-item .bizName{
 	font-size: 120%;
 
@@ -86,7 +95,18 @@ h3{
 }
 
 footer{
+	position: relative;
+
+}
+
+.left {
+	position: absolute;
 	padding:10px;
-	text-align: right;
+
+}
+.right{
+	position: absolute;
+	right:10px;
+
 
 }

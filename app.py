@@ -70,7 +70,7 @@ def find_more():
     loc2=session['loc2']
     foodtype=session['foodtype']
     midxy=session['midxy']
-    session['offset']+= 7
+    session['offset']+= 5
     offset=session['offset']
     print 'offset now is: =====', offset
 
