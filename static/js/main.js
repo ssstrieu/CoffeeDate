@@ -1,6 +1,12 @@
 $( document ).ready(function(){
   console.log('=======document is now ready!!!!!======');
 
+ $( ".bizCategory" ).on( "click", function() {
+    console.log('click event');
+    // $(".item-container li").removeClass( "active" );
+    $( this ).addClass( "active" );
+  });
+
   function initialize() {
   var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
@@ -14,6 +20,8 @@ $( document ).ready(function(){
       map: map,
       title: 'Hello World!'
   });
+
+   
   }
 
   var result=google.maps.event.addDomListener(window, 'load', initialize);

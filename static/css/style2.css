@@ -48,7 +48,7 @@ h3{
 	background-color: #DF691A;
 
 }
-.active .bizName, .active .bizCategory, .active .bizAddress, .active .directions{
+.active .bizName, .active .bizCategory, .active .bizAddress, .active .directions, .active .glyphicon{
 	color:#000;
 
 }
