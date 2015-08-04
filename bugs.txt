@@ -1,0 +1,2 @@
+1. error messages broken on mobile
+2. map too big on mobile
