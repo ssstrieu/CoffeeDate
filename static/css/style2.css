@@ -1,3 +1,7 @@
+body{
+	min-width: 300px;
+
+}
 .jumbotron.city{
 	background: url('../img/city2.jpg');
 	background-size: 100%
@@ -37,10 +41,13 @@ h3{
 	margin: 0 0 10px 0;
 
 }
+#map-canvas{
+	min-height:450px;
+
+}
 
 .item-container{
-	max-height: 408px;
-	overflow: auto;
+	overflow: none;
 
 }
 
@@ -118,6 +125,15 @@ footer{
   and (device-width: 320px) 
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) {
+  	
+  	.item-container{
+		overflow: none;
+	}
+	#map-canvas{
+		width: 70%;
+		padding-left: 10%;
+
+	}
 
 }
 
@@ -127,6 +143,16 @@ footer{
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: portrait) {
+  	
+  	.item-container{
+		overflow: none;
+	}
+
+	#map-canvas{
+		width: 70%;
+		padding-left: 10%;
+
+	}
 
 }
 
@@ -136,5 +162,16 @@ footer{
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) 
   and (orientation: landscape) {
+
+  	.item-container{
+		overflow: none;
+	}
+
+		#map-canvas{
+		width: 70%;
+		padding-left: 10%;
+
+	}
+
 
 }
