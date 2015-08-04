@@ -125,15 +125,20 @@
     <script src="../static/js/jquery-1.11.3.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <!-- <script src="../static/js/epoly.js" type="text/javascript"> </script> -->
-
-
-
-
-    <script> <!-- main.js script -->
+    <script>  //main.js script
         $( document ).ready(function(){
+
         console.log('=======document is now ready!!!!!======');
-  
+
+              $( ".item-container li" ).on( "click", function() {
+                console.log('click event');
+                $(".item-container li").removeClass( "active" );
+                $( this ).addClass( "active" );
+
+                //li has a corresponding marker and the below changes that marker's color
+                //marker.setIcon('https://www.google.com/mapfiles/marker_orange.png');
+              });
+
               function initialize() {
 
                   var myLatlng = new google.maps.LatLng( {{ midxy }} );
@@ -142,18 +147,35 @@
                     center: myLatlng
                   };
                   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                  var marker = new google.maps.Marker({
+                          position: new google.maps.LatLng({{ longlat1 }}),
+                          map: map,
+                          title: 'loc1',
+                          icon:'https://www.google.com/mapfiles/marker_black.png'
+                        });
+
+                  var marker = new google.maps.Marker({
+                          position: new google.maps.LatLng({{ longlat2 }}),
+                          map: map,
+                          title: 'loc2',
+                          icon:'https://www.google.com/mapfiles/marker_black.png'
+                        });
 
                   {% for b in list_of_obj %}
                         var marker = new google.maps.Marker({
                           position: new google.maps.LatLng({{ b.latlong }}),
                           map: map,
-                          title: '{{b.name}}'
+                          title: '{{b.name}}',
+                          icon:'https://www.google.com/mapfiles/marker_yellow.png'
                         });
 
                   {% endfor%}
-                
-            }
+              }
+
               google.maps.event.addDomListener(window, 'load', initialize);
+
+
+// marker.setIcon('https://www.google.com/mapfiles/marker_orange.png');
 
          }) //document-ready close
     </script>

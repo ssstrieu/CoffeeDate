@@ -28,6 +28,8 @@ def find():
     midxy=find_midpoint(longlat1,longlat2)
     session['midxy']=midxy
     print '======session xy====', session['midxy']
+    print '======1====', session['loc1']
+    print '======2====', session['loc2']
 
     try:
         radius =8000
@@ -54,7 +56,7 @@ def find():
         errormsg='Your search returned no results. Please try a different search.'
         return render_template('index.html',errormsg=errormsg, error=error)
 
-    return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1,loc2=loc2, midxy=midxy,started_search=started_search)
+    return render_template('index.html', list_of_obj=list_of_obj, longlat1=longlat1,longlat2=longlat2,loc1=loc1,loc2=loc2, midxy=midxy,started_search=started_search)
 
 @app.route('/more', methods=['POST'])
 def find_more():
@@ -70,7 +72,7 @@ def find_more():
     loc2=session['loc2']
     foodtype=session['foodtype']
     midxy=session['midxy']
-    session['offset']+= 5
+    session['offset']+= 7
     offset=session['offset']
     print 'offset now is: =====', offset
 
