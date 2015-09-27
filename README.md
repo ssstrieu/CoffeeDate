@@ -7,6 +7,6 @@ Meetup fileters: Breakfast/Lunch, Lunch/Dinner, Dessert, Bar
 
 Valid location inputs: address, city, zip code, geological coordinates
 
-Inprogress fixes:
+Coming soon:
 - Js interactivity between map markers and location results in sidebar
 - distance calculation via roads instead of geocoordinates
