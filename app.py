@@ -43,12 +43,48 @@ def find():
         for b in biz:
             list_of_dict.append(b)
         print '============= list of dict', len(list_of_dict)
-        
+
+
         list_of_obj=[]
-        for d in list_of_dict:
-            b=Business_info(d)
-            list_of_obj.append(b)
-        print '============= list of obj', len(list_of_obj)
+        for i in list_of_dict:
+            list_of_obj.append(Business_info(i))
+
+        print '==============', len(list_of_obj)
+        print '==============', list_of_obj
+
+#########FIXXXXXXX if property doesn't exist, don't fail. 
+
+        
+
+        # list_of_obj=[]
+        # test=Business_info(list_of_dict[3])
+        # print '==============', test
+        # print '==============', test.name
+        # list_of_obj.append(test)
+        # test=Business_info(list_of_dict[0])
+        # list_of_obj.append(test)
+
+        # print '==============', len(list_of_obj)
+
+        # for i in list_of_dict: 
+        #     b=Business_info(i)
+        #     print '==============', b, '=============='
+        #     list_of_obj.append(b)
+        #     print '==============', b, '=============='
+        #     print '==============', len(list_of_obj), '=============='
+
+
+
+
+        # for d in list_of_dict:
+        #     b=Business_info(d)
+        #     list_of_obj.append(b)
+
+        # print '============= list of obj', len(list_of_obj)
+        # print '============= list of obj', list_of_obj
+
+
+
 
     except:
         print 'broke :('
@@ -95,14 +131,8 @@ def find_more():
         error=True
         errormsg='No more results. Please try a different search.'
         return render_template('index.html',errormsg=errormsg, error=error)
-
     return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1,loc2=loc2, midxy=midxy,started_search=started_search)
-
-
-
-
-
-    return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1 )
+    # return render_template('index.html', list_of_obj=list_of_obj, loc1=loc1 )
 
 
 

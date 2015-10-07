@@ -150,19 +150,63 @@ def query_api(term, location, RADIUS_FILTER, OFFSET):
 
 class Business_info(object):
     def __init__(self, Obj):
-        self.name = Obj['name']
-        self.mobile_url = Obj['mobile_url']
-        self.stars = Obj['rating']
-        categories=Obj['categories'] #format category from array in an array to string
-        categories_list=[]
-        for c in categories:
-          categories_list.append(''.join(c[0]))
-        categories_string=', '.join(categories_list)
-        self.category = categories_string
-        addr=Obj['location']['display_address'] # format address from list to string
-        str1 = ', '.join(str(e) for e in addr)
-        # addr=str(Obj['location']['display_address'][0]) +', '+ str(Obj['location']['display_address'][2])
-        self.address = str1
-        self.longlat= str(Obj['location']['coordinate']['longitude'])+', '+str(Obj['location']['coordinate']['latitude'])
-        self.latlong=str(Obj['location']['coordinate']['latitude'])+', '+str(Obj['location']['coordinate']['longitude'])
-       
+        try:
+            self.name = Obj['name']
+            print self.name
+        except:
+            print '============Error with Yelp data'
+            self.name='Not available'
+        try:
+            self.mobile_url = Obj['mobile_url']
+            print self.mobile_url
+        except:
+            print '============Error with Yelp data'
+            self.mobile_url='Not available'
+        try:
+            self.stars = Obj['rating']
+            print self.stars
+        except:
+            print '============Error with Yelp data'
+            self.stars='Not available'
+        try:
+            categories=Obj['categories'] #format category from array in an array to string
+            categories_list=[]
+            for c in categories:
+                categories_list.append(''.join(c[0]))
+            categories_string=', '.join(categories_list)
+            self.category = categories_string
+            print self.category
+        except:
+            print '============Error with Yelp data'
+            self.category='Not available'
+        try:
+            addr=Obj['location']['display_address'] # format address from list to string
+            str1 = ', '.join(str(e) for e in addr)
+            # addr=str(Obj['location']['display_address'][0]) +', '+ str(Obj['location']['display_address'][2])
+            self.address = str1
+            print self.address
+        except:
+            print '============Error with Yelp data'
+            self.address='Not available'
+        try:
+            self.longlat= str(Obj['location']['coordinate']['longitude'])+', '+str(Obj['location']['coordinate']['latitude'])
+            print self.longlat
+        except:
+            print '============Error with Yelp data'
+            self.longlat='Not available'
+        try:
+            self.latlong=str(Obj['location']['coordinate']['latitude'])+', '+str(Obj['location']['coordinate']['longitude'])
+            print self.latlong
+        except:
+            print '============Error with Yelp data'
+            self.latlong='Not available'
+
+
+
+
+
+
+
+
+
+
