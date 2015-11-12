@@ -6,6 +6,7 @@ import sys
 import urllib
 import urllib2
 import oauth2
+from secret import *
 
 API_HOST = 'api.yelp.com'
 DEFAULT_TERM = 'RESTAURANT'
@@ -20,10 +21,7 @@ SORT= 2 # sort entries by highest rating
 OFFSET=0 # used to get 10 more entries
 
 # OAuth credential placeholders that must be filled in by users
-CONSUMER_KEY='KnkNJZOb3bXivxWtsG7Eow'
-CONSUMER_SECRET='z7lfCVyF6ZaU3_dr8LWMlflfuh0'
-TOKEN='fwNYpd3zdX_njQ6Ja_DhXnImPMxt5_wM'
-TOKEN_SECRET='IsKZxAUeTfSP07dWT5QaAPkKG4Q'
+
 
 def request_to_url(host, path, url_params=None):
     """Prepares OAuth authentication and sends the request to the API.
