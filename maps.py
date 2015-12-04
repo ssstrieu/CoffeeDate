@@ -42,7 +42,7 @@ def find_midpoint(longlat1,longlat2):
 
 # midxy=find_midpoint(get_longlat('los angeles'),'40.7127837, -74.0059413')
 # print 'midxy', midxy
-# get_longlat('14441 tiburon rd, san leandro, ca 94577')
+# get_longlat('san leandro, ca 94577')
 
 
 

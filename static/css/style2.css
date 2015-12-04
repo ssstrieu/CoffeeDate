@@ -15,8 +15,8 @@ body{
 
 .jumbotron{
 	padding: 5% 10%;
-	background: none;
-	/* opacity:.6; */
+	background: #000;
+	opacity:.6; 
 
 }
 
@@ -47,7 +47,10 @@ textarea:focus, input:focus {
 
 }
 #map-canvas{
-	min-height:450px;
+	height:580px;
+	width:100%;
+	margin-top:65px;
+	margin-bottom:24px;
 
 }
 

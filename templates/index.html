@@ -93,15 +93,17 @@
                     </ol> 
                 </div>
             </div>
-            <div class='col-md-8' id='map-canvas'></div>
+            <div class='col-md-8'>
+                <div id='map-canvas'></div>
+            </div>
         </div>
     </div>
     {% endif %}
     
     <script src="../static/js/jquery-1.11.3.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>  //main.js script
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>  //main.js script inserted here for jinja functionality
         $( document ).ready(function(){
 
         console.log('=======document is now ready!!!!!======');
@@ -116,10 +118,9 @@
               });
 
               function initialize() {
-
                   var myLatlng = new google.maps.LatLng( {{ midxy }} );
                   var mapOptions = {
-                    zoom: 10,
+                    zoom: 12,
                     center: myLatlng
                   };
                   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -150,8 +151,6 @@
 
               google.maps.event.addDomListener(window, 'load', initialize);
 
-
-// marker.setIcon('https://www.google.com/mapfiles/marker_orange.png');
 
          }) //document-ready close
     </script>
