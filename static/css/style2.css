@@ -113,8 +113,11 @@ footer {
    bottom:0px;
    height:24px;
    width:100%;
-   color:#fff;
    background:#DF691A;
+
+}
+#footerSig a{
+	color:#fff;
 }
 
 .left {
@@ -133,9 +136,7 @@ footer {
 	color:#fff;
 	text-decoration: underline;
 }
-#footerSig{
-	color:#fff;
-}
+
 
 /* ----------- PHONE: Galaxy S4 ----------- */
 
