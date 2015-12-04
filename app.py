@@ -1,9 +1,11 @@
+import os
 from flask import Flask, jsonify, render_template, request, session
 from maps import *
 from yelp import *
+from secret import *
 
 app = Flask(__name__)  
-app.secret_key = 'thisisasecret'
+app.secret_key = flasksecret
 
 # Routes=======================
 
@@ -133,6 +135,7 @@ def find_more():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080))) #for running in cloud9
+    #app.run(debug=True)
     # find_more()
 

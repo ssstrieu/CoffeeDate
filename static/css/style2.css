@@ -1,28 +1,29 @@
 body{
 	min-width: 300px;
+	background: url('../img/city2.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	opacity:.75;
+	background-attachment:fixed;
 
 }
 .jumbotron.city{
-	background: url('../img/city2.jpg');
-	background-size: 100%
-	background-repeat: no-repeat;
-
-}
-
-.jumbotron{
+	background: #000;
 	padding: 10%;
 
 }
-h1.textStroke{
-	text-shadow: 2px 2px 3px #2b3e50;
+
+
+input, select, textarea{
+    color: #000;
+    font-weight: bold;
 }
 
-h3.textStroke{
-	text-shadow: 1px 1px 1px #2b3e50;
+textarea:focus, input:focus {
+    color: orange;
+    font-weight: bold;
 }
-h3{
-	padding-left: 40px;
-}
+
 
 .spacerR{
 	margin-right:6px;
