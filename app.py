@@ -16,27 +16,6 @@ def index():
 
 @app.route('/find', methods=['POST'])
 def find(): 
-<<<<<<< HEAD
-=======
-    started_search=True
-    session['loc1']=request.form.get('location1')
-    session['loc2']=request.form.get('location2')
-    session['foodtype']=request.form.get('foodtype')
-    loc1=session['loc1']
-    loc2=session['loc2']
-    foodtype=session['foodtype']
-    session['offset']=0
-    offset=session['offset']
-
-    longlat1=get_longlat(loc1)
-    longlat2=get_longlat(loc2)
-    midxy=find_midpoint(longlat1,longlat2)
-    session['midxy']=midxy
-    print '======session xy====', session['midxy']
-    print '======1====', session['loc1']
-    print '======2====', session['loc2']
-
->>>>>>> dbcb9677602e06baedeac0400022f7be19a96c5f
     try:
         started_search=True
         session['loc1']=request.form.get('location1')
