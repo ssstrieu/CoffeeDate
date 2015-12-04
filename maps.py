@@ -1,6 +1,6 @@
 import requests
-
-API_KEY='AIzaSyAPyQ4vH8xfcrDI5lQ1DiTkaMvL-LP8_KU'
+from secret import *
+API_KEY=yelpSecret
 def get_longlat(place):
     url='https://maps.googleapis.com/maps/api/geocode/json?'
     url+='address={}&key={}'.format(place,API_KEY)

@@ -1,15 +1,22 @@
+html { 
+  background: url(../img/coffee.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body{
+	background: none;
 	min-width: 300px;
-	background: url('../img/city2.jpg');
-	background-size: 100%;
-	background-repeat: no-repeat;
-	opacity:.75;
-	background-attachment:fixed;
 
 }
-.jumbotron.city{
-	background: #000;
-	padding: 10%;
+
+
+.jumbotron{
+	padding: 5% 10%;
+	background: none;
+	/* opacity:.6; */
 
 }
 
@@ -32,14 +39,11 @@ textarea:focus, input:focus {
 	margin-left:6px;
 }
 
-.sidebar{
-	/*border: 4px solid red;
-	padding: 1%;*/
-
-}
 
 .sidebar-head{
 	margin: 0 0 10px 0;
+	text-shadow: 1px 1px 1px #2b3e50;
+
 
 }
 #map-canvas{
@@ -73,9 +77,9 @@ textarea:focus, input:focus {
 
 }
 .bizAddress{
-	font-size: 80%;
+	font-size: 100%;
 	font-style: italic;
-	color:#DF691A;
+	color:#fff;
 }
 
 .bizAddress a{
@@ -102,9 +106,15 @@ textarea:focus, input:focus {
 	visibility: hidden;
 }
 
-footer{
-	position: relative;
 
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:24px;
+   width:100%;
+   color:#fff;
+   background:#DF691A;
 }
 
 .left {
@@ -117,6 +127,14 @@ footer{
 	right:10px;
 
 
+}
+
+.list-group-item .bizName{
+	color:#fff;
+	text-decoration: underline;
+}
+#footerSig{
+	color:#fff;
 }
 
 /* ----------- PHONE: Galaxy S4 ----------- */
