@@ -53,6 +53,10 @@ textarea:focus, input:focus {
 	margin-bottom:24px;
 
 }
+#map-canvas{
+	min-height:450px;
+
+}
 
 .item-container{
 	overflow: none;
